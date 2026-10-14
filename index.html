@@ -88,6 +88,9 @@ h1,h2,.logo,.wall li,.cols h3,.steps li::before{-webkit-text-stroke:.16em var(--
 .logo .dot{fill:var(--mark);stroke:var(--fg);stroke-width:1.5;transform-origin:6.5px 32.5px;animation:pulse 1.4s ease-in-out infinite}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border:0;border-radius:14px;background:var(--cta);color:var(--cta-fg);text-decoration:none;font-family:var(--display);font-style:italic;font-weight:900;font-size:26px;line-height:1;text-transform:uppercase;letter-spacing:.01em;white-space:nowrap;cursor:pointer;transition:transform .15s ease}
 .btn:hover{transform:translate(-2px,-2px) rotate(-1deg)}
+.bar-nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:8px 10px}
+.nav-pill{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border:2px solid var(--fg);border-radius:999px;background:var(--ground);color:var(--fg);text-decoration:none;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;transition:transform .15s ease}
+.nav-pill:hover{transform:translate(-1px,-1px) rotate(-1.5deg)}
 .btn.big{min-height:64px;padding:0 30px;font-size:clamp(28px,7vw,36px);border-radius:18px}
 @media (max-width:520px){.bar .btn{min-height:44px;padding:0 14px;font-size:21px}.logo{font-size:34px}}
 .btn.giant{min-height:96px;padding:0 44px;font-size:clamp(36px,6vw,72px);border-radius:24px;max-width:100%}
@@ -206,10 +209,15 @@ footer{padding-block:28px 12px;border-top:2px solid var(--fg);display:flex;flex-
 /* costume change and the wardrobe link */
 .swap-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
 .wardrobe{font-weight:600;text-underline-offset:5px}
+.more{margin:-10px 0 0}
 
 /* the pack: pick anyone as the widget's talisman */
 .who-pick{position:relative;z-index:1;margin-top:12px;min-height:44px;padding:0 14px;border:2px solid var(--fg);border-radius:999px;background:var(--ground);font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
 .who-pick[aria-pressed="true"]{background:var(--fg);color:var(--ground)}
+.who-acts{position:relative;z-index:1;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px;max-width:100%}
+.who-acts .who-pick{margin-top:0}
+.who-dos{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border-radius:999px;background:var(--fg);color:var(--ground);text-decoration:none;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-align:center;transition:transform .15s ease}
+.who-dos:hover{transform:translate(-1px,-1px) rotate(-1.5deg)}
 
 /* display faces: door plates for the communities, film titles for two headings, a mixed wall of phrases */
 .who-top{font-family:'ST Tablichka',var(--mono);font-size:16px;letter-spacing:.12em;line-height:1.05;text-transform:lowercase}
@@ -284,7 +292,11 @@ footer{padding-block:28px 12px;border-top:2px solid var(--fg);display:flex;flex-
 
   <header class="bar">
     <a class="logo" href="#top" aria-label="Каналья!">Каналья<svg width="18" height="38" viewBox="0 0 18 38" aria-hidden="true"><path class="stick" d="M13 4L8.5 24"></path><circle class="dot" cx="6.5" cy="32.5" r="3.6"></circle></svg></a>
-    <a class="btn" href="#get">Забрать виджет</a>
+    <nav class="bar-nav" aria-label="Разделы сайта">
+      <a class="nav-pill" href="personazhi/index.html">Свора</a>
+      <a class="nav-pill" href="garderob/index.html">Гардероб</a>
+      <a class="btn" href="#get">Забрать виджет</a>
+    </nav>
   </header>
 
   <div class="hero">
@@ -313,6 +325,7 @@ footer{padding-block:28px 12px;border-top:2px solid var(--fg);display:flex;flex-
   <section id="pack">
     <h2>Тфу! Чят! Нельзя!</h2>
     <p class="sub"><span class="tp">Каналья по-итальянски значит свора собак. В ней водятся все: от программистов до соседей по подъезду. На плашке у каждого то, что виджет сказал бы на сайте такого сообщества. Любого можно взять в талисманы: он выглянет из-за виджета в углу.</span></p>
+    <p class="more"><a class="wardrobe" href="personazhi/index.html"><span class="tp">Вся свора в лицах: карточки персонажей</span></a></p>
     <ul class="pack" id="packList"></ul>
   </section>
 
@@ -320,7 +333,7 @@ footer{padding-block:28px 12px;border-top:2px solid var(--fg);display:flex;flex-
     <h2>Бот его знает</h2>
     <p class="sub"><span class="tp">Два коротких предложения: наблюдение и укол. Тон выбирает владелец сайта.</span></p>
     <figure class="man">
-      <img src="c/mascot-xl.webp" width="690" height="1160" alt="Маскот Каналья: огромная стёганая шляпа с розовым плюмажем, рыжие усы во всю ширину, розовый пуховый плащ, шпага и кроссовки">
+      <img src="c/mascot-xl.webp" width="680" height="1148" alt="Маскот Каналья: огромная стёганая шляпа с розовым плюмажем, рыжие усы во всю ширину, розовый пуховый плащ, шпага и кроссовки">
       <figcaption><b>Каналья</b>Голос виджета. Усы свои, шляпа пуховая. Шпагой показывает настроение на шкале, а возглас бережёт для пика.</figcaption>
     </figure>
     <div class="chips" id="toneChips" role="group" aria-label="Тон виджета">
@@ -338,7 +351,7 @@ footer{padding-block:28px 12px;border-top:2px solid var(--fg);display:flex;flex-
       <div class="group-title"><span class="tp">Костюм</span></div>
       <div class="swap-row">
         <button class="btn big" type="button" id="swapBig">Переодеть</button>
-        <a class="wardrobe" href="garderob/"><span class="tp">Весь гардероб: двенадцать костюмов</span></a>
+        <a class="wardrobe" href="garderob/index.html"><span class="tp">Весь гардероб: двенадцать костюмов</span></a>
       </div>
       <p class="group-note"><span class="tp" id="skinNote"></span></p>
     </div>
@@ -1179,6 +1192,8 @@ return Component;
     ['fisherman', 'Рыбаки', 'calm', 'Клюёт слабо. Байки идут хорошо', 'Рыбак в жёлтой надувной лодке вместо куртки'],
     ['photographer', 'Фотографы', 'cozy', 'Спорят о плёнке. Снимают на телефон', 'Фотограф в накидке из объективов, под зонтом-отражателем']
   ];
+  // names from the character cards; each one links to that character's dossier
+  var NAMES = {"mascot": "Каналья", "neighbour": "Главная по подъезду", "programmer": "Де Баг", "fan": "Маскот команды", "designer": "Я так вижу", "doctor": "Доктор", "dogowner": "Догситтер", "gamer": "Респ", "psychologist": "Креслорд", "musician": "Сингл Леди", "parent": "Папа Мама", "gardener": "Рассада", "student": "Юность", "runner": "Десятка", "carfan": "Угонщица", "bookclub": "Леди Закладка", "cook": "Щепотка", "fisherman": "Адмирал Клёв", "photographer": "Месье Штатифф"}, DOSSIER = 'personazhi/index.html#';
   (function buildPack() {
     var list = $('packList');
     PACK.forEach(function (c, i) {
@@ -1203,13 +1218,17 @@ return Component;
       btn.setAttribute('aria-pressed', String(c[0] === S.hero));
       btn.textContent = c[0] === S.hero ? 'В виджете' : 'В талисманы';
       btn.addEventListener('click', function () { setHero(c[0]); });
-      li.appendChild(img); li.appendChild(cap); li.appendChild(btn);
+      var acts = document.createElement('div'); acts.className = 'who-acts';
+      var dos = document.createElement('a'); dos.className = 'who-dos'; dos.href = DOSSIER + c[0];
+      dos.textContent = (NAMES[c[0]] || 'Досье') + ' →'; dos.setAttribute('aria-label', 'Досье: ' + (NAMES[c[0]] || c[1]));
+      acts.appendChild(btn); acts.appendChild(dos);
+      li.appendChild(img); li.appendChild(cap); li.appendChild(acts);
       list.appendChild(li);
     });
   })();
 
   // ---- the crowd: the chat itself, played by cut-out characters. The mood sets how they move.
-  var CH = { bookclub: 0.735, carfan: 0.727, cook: 0.523, designer: 0.613, doctor: 0.708, dogowner: 0.8, fan: 0.668, fisherman: 0.6, gamer: 0.406, gardener: 0.687, musician: 0.669, neighbour: 0.976, parent: 0.566, photographer: 0.55, programmer: 0.624, psychologist: 0.581, runner: 0.626, student: 0.468 };
+  var CH = { bookclub: 0.735, carfan: 0.727, cook: 0.523, designer: 0.613, doctor: 0.708, dogowner: 0.634, fan: 0.668, fisherman: 0.6, gamer: 0.406, gardener: 0.687, musician: 0.669, neighbour: 0.976, parent: 0.561, photographer: 0.55, programmer: 0.64, psychologist: 0.579, runner: 0.639, student: 0.468 };
   var EXTRA = {"cat": 0.7, "pug": 0.529, "pigeon": 0.55, "mascot2": 0.723, "orca": 0.69, "sphynx": 0.721, "dachshund": 0.981, "bear": 0.697, "british": 0.695, "afghan": 0.626};
   var CAST = ['programmer', 'neighbour', 'fan', 'designer', 'dogowner', 'doctor', 'gamer', 'musician', 'parent', 'psychologist', 'gardener', 'runner', 'student', 'carfan', 'cook', 'bookclub', 'fisherman', 'photographer'];
   // The extra flyers only fill the stage: they are not in the roster and carry no widget phrase.
@@ -1224,7 +1243,7 @@ return Component;
     CAST = mixed;
   })();
   // Props: what flies around the characters. [file, width / height, moods it belongs to]
-  var PROPS = [["s-fan", 1.076, ["storm"], "sticker"], ["s-neighbour", 1.416, ["critic"], "sticker"], ["s-doctor", 1.117, ["focus"], "sticker"], ["o-ball", 1.003, ["storm"], "object"], ["s-dogowner", 0.925, ["joy"], "sticker"], ["s-musician", 0.886, ["waiting"], "sticker"], ["s-bookclub", 0.866, ["focus"], "sticker"], ["o-drill", 0.989, ["storm"], "object"], ["s-fisherman", 0.869, ["calm"], "sticker"], ["s-student", 0.793, ["silence"], "sticker"], ["s-psychologist", 0.907, ["care"], "sticker"], ["o-keyboard", 1.279, ["critic"], "object"], ["s-gardener", 0.89, ["hype"], "sticker"], ["s-designer", 1.213, ["critic"], "sticker"], ["s-gamer", 0.902, ["cozy"], "sticker"], ["o-tissue", 0.963, ["care"], "object"], ["s-carfan", 0.874, ["storm"], "sticker"], ["s-corgi", 0.752, ["joy"], "sticker"], ["s-dog", 1.027, ["cozy"], "sticker"], ["o-tissue2", 0.939, ["care"], "object"], ["s-cook", 0.927, ["cozy"], "sticker"], ["s-runner", 0.865, ["joy"], "sticker"], ["s-parent", 1.004, ["silence"], "sticker"], ["o-heart", 1.027, ["care", "joy"], "object"], ["s-programmer", 0.889, ["critic"], "sticker"], ["s-mascot", 1.15, ["hype"], "sticker"], ["s-finger", 0.648, ["hype"], "sticker"], ["o-cricket", 1.166, ["silence"], "object"], ["s-laptop", 1.36, ["critic"], "sticker"], ["s-sneaker", 1.258, ["joy"], "sticker"], ["m-neighbour", 1.0, ["critic"], "meme"], ["o-tomato", 0.913, ["joy"], "object"], ["m-corgi", 1.0, ["cozy"], "meme"], ["m-fan", 1.0, ["storm"], "meme"], ["m-programmer", 1.0, ["storm"], "meme"], ["o-shawarma", 0.782, ["cozy"], "object"], ["m-student", 1.0, ["silence"], "meme"], ["m-cook", 1.0, ["critic"], "meme"], ["m-mascot", 1.0, ["hype"], "meme"], ["o-shawarma2", 0.721, ["cozy"], "object"], ["m-parent", 1.0, ["storm"], "meme"], ["m-gamer", 1.0, ["cozy"], "meme"], ["m-psychologist", 1.0, ["care"], "meme"], ["o-tire", 0.916, ["cozy"], "object"], ["m-doctor", 1.0, ["care"], "meme"], ["m-dog", 1.0, ["care"], "meme"], ["m-fisherman", 1.0, ["calm"], "meme"], ["o-flame", 0.671, ["hype"], "object"], ["m-musician", 1.0, ["waiting"], "meme"], ["m-bookclub", 1.0, ["focus"], "meme"], ["m-gardener", 1.0, ["hype"], "meme"], ["o-moustache", 2.088, ["hype"], "object"], ["m-runner", 1.0, ["joy"], "meme"], ["m-designer", 1.0, ["critic"], "meme"], ["m-photographer", 1.0, ["waiting"], "meme"], ["o-fish", 0.942, ["calm"], "object"], ["m-carfan", 1.0, ["storm"], "meme"], ["g-fan", 1.0, ["hype"], "gif"], ["g-corgi", 1.0, ["storm"], "gif"], ["o-fish2", 0.837, ["calm"], "object"], ["g-neighbour", 1.0, ["critic"], "gif"], ["g-mascot", 1.0, ["hype"], "gif"], ["g-doctor", 1.0, ["care"], "gif"], ["o-trumpet", 1.423, ["waiting"], "object"], ["g-carfan", 1.0, ["waiting"], "gif"], ["g-student", 1.0, ["silence"], "gif"], ["g-dog", 1.0, ["focus"], "gif"]];
+  var PROPS = [["s-fan", 1.076, ["storm"], "sticker"], ["s-neighbour", 1.416, ["critic"], "sticker"], ["s-doctor", 1.117, ["focus"], "sticker"], ["o-ball", 1.003, ["storm"], "object"], ["s-dogowner", 0.925, ["joy"], "sticker"], ["s-musician", 0.886, ["waiting"], "sticker"], ["s-bookclub", 0.866, ["focus"], "sticker"], ["o-drill", 0.989, ["storm"], "object"], ["s-fisherman", 0.869, ["calm"], "sticker"], ["s-student", 0.793, ["silence"], "sticker"], ["s-psychologist", 0.907, ["care"], "sticker"], ["o-keyboard", 1.279, ["critic"], "object"], ["s-gardener", 0.89, ["hype"], "sticker"], ["s-designer", 1.213, ["critic"], "sticker"], ["s-gamer", 0.902, ["cozy"], "sticker"], ["o-tissue", 0.963, ["care"], "object"], ["s-carfan", 0.874, ["storm"], "sticker"], ["s-corgi", 0.752, ["joy"], "sticker"], ["s-dog", 1.027, ["cozy"], "sticker"], ["o-tissue2", 0.939, ["care"], "object"], ["s-cook", 0.927, ["cozy"], "sticker"], ["s-runner", 0.865, ["joy"], "sticker"], ["s-parent", 1.004, ["silence"], "sticker"], ["o-heart", 1.027, ["care", "joy"], "object"], ["s-programmer", 0.889, ["critic"], "sticker"], ["s-mascot", 1.15, ["hype"], "sticker"], ["s-finger", 0.648, ["hype"], "sticker"], ["o-cricket", 1.166, ["silence"], "object"], ["s-laptop", 1.36, ["critic"], "sticker"], ["s-sneaker", 1.258, ["joy"], "sticker"], ["m-neighbour", 1.0, ["critic"], "meme"], ["o-tomato", 0.937, ["joy"], "object"], ["m-corgi", 1.0, ["cozy"], "meme"], ["m-fan", 1.0, ["storm"], "meme"], ["m-programmer", 1.0, ["storm"], "meme"], ["o-shawarma", 0.782, ["cozy"], "object"], ["m-student", 1.0, ["silence"], "meme"], ["m-cook", 1.0, ["critic"], "meme"], ["m-mascot", 1.0, ["hype"], "meme"], ["o-shawarma2", 0.721, ["cozy"], "object"], ["m-parent", 1.0, ["storm"], "meme"], ["m-gamer", 1.0, ["cozy"], "meme"], ["m-psychologist", 1.0, ["care"], "meme"], ["o-tire", 0.916, ["cozy"], "object"], ["m-doctor", 1.0, ["care"], "meme"], ["m-dog", 1.0, ["care"], "meme"], ["m-fisherman", 1.0, ["calm"], "meme"], ["o-flame", 0.671, ["hype"], "object"], ["m-musician", 1.0, ["waiting"], "meme"], ["m-bookclub", 1.0, ["focus"], "meme"], ["m-gardener", 1.0, ["hype"], "meme"], ["o-moustache", 2.088, ["hype"], "object"], ["m-runner", 1.0, ["joy"], "meme"], ["m-designer", 1.0, ["critic"], "meme"], ["m-photographer", 1.0, ["waiting"], "meme"], ["o-fish", 0.942, ["calm"], "object"], ["m-carfan", 1.0, ["storm"], "meme"], ["g-fan", 1.0, ["hype"], "gif"], ["g-corgi", 1.0, ["storm"], "gif"], ["o-fish2", 0.837, ["calm"], "object"], ["g-neighbour", 1.0, ["critic"], "gif"], ["g-mascot", 1.0, ["hype"], "gif"], ["g-doctor", 1.0, ["care"], "gif"], ["o-trumpet", 1.423, ["waiting"], "object"], ["g-carfan", 1.0, ["waiting"], "gif"], ["g-student", 1.0, ["silence"], "gif"], ["g-dog", 1.0, ["focus"], "gif"]];
   var FORM = { ring: 1, queue: 1, rows: 1, hug: 1 };
   var BEH = {
     storm: { mode: 'duel', speed: 210, spin: 1.5, bounce: 0.9, pack: 1 },
